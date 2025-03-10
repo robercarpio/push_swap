@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rober <rober@student.42.fr>                +#+  +:+       +#+        */
+/*   By: rcarpio- <rcarpio-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/04 16:03:53 by rober             #+#    #+#             */
-/*   Updated: 2025/03/07 19:25:21 by rober            ###   ########.fr       */
+/*   Created: 2025/03/06 15:10:54 by rcarpio-          #+#    #+#             */
+/*   Updated: 2025/03/10 19:11:41 by rcarpio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,19 @@
 
 int	main(int argc, char *argv[])
 {
-	if (argc > 2)
-	{	(void)argv;
-		if(argc>=2)
-			write(1,"push_swap\n",10);
-		else
-			write(1,"Error: Faltan argumentos.\n",26);	
-		
+	int	count;
+	int	i;
+	if (argc > 1)
+	{
+		i = 1;
+		while (argv[i])
+		{
+			index_counter(&count,argv[i]);
+			i++;
+		}
+		printf("%d\n",count);
 	}
-	return (0);
+	else
+		printf("Error: args\n");
+	return(0);
 }

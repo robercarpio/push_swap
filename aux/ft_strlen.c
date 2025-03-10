@@ -3,19 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rober <rober@student.42.fr>                +#+  +:+       +#+        */
+/*   By: rcarpio- <rcarpio-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/04 18:54:59 by rober             #+#    #+#             */
-/*   Updated: 2025/03/07 21:01:12 by rober            ###   ########.fr       */
+/*   Created: 2025/03/06 15:16:27 by rcarpio-          #+#    #+#             */
+/*   Updated: 2025/03/06 15:18:41 by rcarpio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "aux.h"
 
 int	ft_strlen(char *str)
 {
 	int	i;
 
 	i = 0;
-	while(str[i])
+	while (str[i])
 		i++;
 	return(i);
 }

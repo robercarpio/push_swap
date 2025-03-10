@@ -1,32 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   free_split.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rcarpio- <rcarpio-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/06 15:15:30 by rcarpio-          #+#    #+#             */
-/*   Updated: 2025/03/06 15:18:55 by rcarpio-         ###   ########.fr       */
+/*   Created: 2025/03/10 16:39:48 by rcarpio-          #+#    #+#             */
+/*   Updated: 2025/03/10 16:42:57 by rcarpio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "aux.h"
 
-char	*ft_substr(char *s,int start,int len)
+void	free_split(char **arr)
 {
-	char	*substr;
-	int	len_s;
+	int	i;
 
-	len_s = ft_strlen(s);
-	if (start >= len_s)
+	i = 0;
+	while (arr[i])
 	{
-		return (ft_strdup(""));
+		free(arr[i]);
+		i++;
 	}
-	if (len > len_s - start)
-		len = len_s - start;
-	substr = (char *)malloc(len + 1);
-	if (!substr)
-		return (0);
-	ft_strlcpy(substr, s + start, len + 1);
-	return (substr);
+	free(arr);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rober <rober@student.42.fr>                +#+  +:+       +#+        */
+/*   By: rcarpio- <rcarpio-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/01 15:41:10 by rcarpio-          #+#    #+#             */
-/*   Updated: 2025/03/07 18:29:34 by rober            ###   ########.fr       */
+/*   Created: 2025/03/06 15:13:27 by rcarpio-          #+#    #+#             */
+/*   Updated: 2025/03/06 15:14:48 by rcarpio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static int	ft_countwords(char *str, int c)
 {
 	int	i;
-	int	b;
+	int		b;
 
 	b = 0;
 	i = 0;
