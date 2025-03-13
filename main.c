@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rober <rober@student.42.fr>                +#+  +:+       +#+        */
+/*   By: rcarpio- <rcarpio-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 15:10:54 by rcarpio-          #+#    #+#             */
-/*   Updated: 2025/03/12 13:46:59 by rober            ###   ########.fr       */
+/*   Updated: 2025/03/13 16:05:34 by rcarpio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,9 @@ int	main(int argc, char *argv[])
 {
 	int	count;
 	int	i;
+	char	**arr;
+	char	**tmp;
+	
 	if (argc > 1)
 	{
 		i = 1;
@@ -25,7 +28,14 @@ int	main(int argc, char *argv[])
 			index_counter(&count,argv[i]);
 			i++;
 		}
-		printf("%d\n",count);
+		i = 1;
+		arr = (char **)malloc(count * sizeof(char *));
+		while (argv[i])
+		{
+			tmp = ft_split(argv[i],' ');
+			allocate_args(&arr,tmp);
+			i++;
+		}
 	}
 	else
 		printf("Error: args\n");
