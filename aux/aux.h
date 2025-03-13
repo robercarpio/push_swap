@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   aux.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rcarpio- <rcarpio-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rober <rober@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 15:10:58 by rcarpio-          #+#    #+#             */
-/*   Updated: 2025/03/10 16:42:33 by rcarpio-         ###   ########.fr       */
+/*   Updated: 2025/03/12 14:16:13 by rober            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,6 @@ char	*ft_strdup(char *s);
 int		ft_strlen(char *str);
 int		ft_strlcpy(char *dst, char *src, int size);
 void	free_split(char **arr);
+int	array_length(char **arr);
 
 #endif
