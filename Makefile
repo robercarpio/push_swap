@@ -1,16 +1,21 @@
-SRCS = main.c \
-       aux/ft_bzero.c \
-	   aux/ft_calloc.c \
-	   aux/ft_memcpy.c \
-	   aux/ft_split.c \
-	   aux/ft_strdup.c \
-	   aux/ft_strlcpy.c \
-	   aux/ft_strlen.c \
-	   aux/ft_substr.c \
-	   aux/free_split.c \
-	   aux/array_length.c \
-	   args/index_counter.c \
-	   args/allocate_args.c \
+SRCS =	main.c \
+		aux/ft_bzero.c \
+		aux/ft_calloc.c \
+		aux/ft_memcpy.c \
+		aux/ft_split.c \
+		aux/ft_strdup.c \
+		aux/ft_strlcpy.c \
+		aux/ft_strlen.c \
+		aux/ft_substr.c \
+		aux/free_split.c \
+		aux/array_length.c \
+		aux/ft_lstadd_back.c \
+		aux/ft_lstlast.c \
+		aux/ft_atoi.c \
+		aux/only_chars_allowed.c \
+		aux/must_contain.c \
+		args/index_counter.c \
+		args/allocate_args.c \
 
 NAME = push_swap
 CC = cc

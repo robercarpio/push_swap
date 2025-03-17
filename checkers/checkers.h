@@ -1,27 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   allocate_args.c                                    :+:      :+:    :+:   */
+/*   checkers.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rcarpio- <rcarpio-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/12 13:49:00 by rober             #+#    #+#             */
-/*   Updated: 2025/03/15 17:59:03 by rcarpio-         ###   ########.fr       */
+/*   Created: 2025/03/15 17:30:34 by rcarpio-          #+#    #+#             */
+/*   Updated: 2025/03/15 17:31:05 by rcarpio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "args.h"
+#ifndef CHECKERS_H
+# define CHECKERS_H
 
-void	allocate_args(char ***dest, char **src)
-{
-	int	i;
-	int	len;
+#include <stdio.h>
 
-	i = 0;
-	len = array_length(*dest);
-	while (i<len)
-	{
-		(*dest)[len + i] = src[i];
-		i++;
-	}
-}
+
+
+int	sig_checker(char *str);
+
+#endif

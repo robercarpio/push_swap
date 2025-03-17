@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   allocate_args.c                                    :+:      :+:    :+:   */
+/*   sig_count.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rcarpio- <rcarpio-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/12 13:49:00 by rober             #+#    #+#             */
-/*   Updated: 2025/03/15 17:59:03 by rcarpio-         ###   ########.fr       */
+/*   Created: 2025/03/15 17:17:05 by rcarpio-          #+#    #+#             */
+/*   Updated: 2025/03/15 18:08:42 by rcarpio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "args.h"
+#include "aux.h"
 
-void	allocate_args(char ***dest, char **src)
+int	sig_count(char *str)
 {
 	int	i;
-	int	len;
+	int	count;
 
+	count = 0;
 	i = 0;
-	len = array_length(*dest);
-	while (i<len)
+	while (str[i])
 	{
-		(*dest)[len + i] = src[i];
+		if (str[i] == '-' || str[i] == '+')
+			count++;
 		i++;
 	}
+	return (count);
 }

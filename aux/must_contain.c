@@ -1,27 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   allocate_args.c                                    :+:      :+:    :+:   */
+/*   must_contain.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rcarpio- <rcarpio-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/12 13:49:00 by rober             #+#    #+#             */
-/*   Updated: 2025/03/15 17:59:03 by rcarpio-         ###   ########.fr       */
+/*   Created: 2025/03/15 18:00:00 by rcarpio-          #+#    #+#             */
+/*   Updated: 2025/03/15 18:04:22 by rcarpio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "args.h"
+#include "aux.h"
 
-void	allocate_args(char ***dest, char **src)
+int	must_contain(char *str, char *must)
 {
 	int	i;
-	int	len;
-
+	int j;
+	int	b;
+	
+	b = 0;
 	i = 0;
-	len = array_length(*dest);
-	while (i<len)
+	while (str[i] && b == 0)
 	{
-		(*dest)[len + i] = src[i];
+		j = 0;
+		while (must[j] && b == 0)
+		{
+			if(str[i] == must[j])
+			{
+				b = 1;
+			}
+			j++;
+		}
 		i++;
 	}
+	return(b);
 }

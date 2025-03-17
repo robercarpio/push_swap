@@ -6,7 +6,7 @@
 /*   By: rcarpio- <rcarpio-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 15:10:41 by rcarpio-          #+#    #+#             */
-/*   Updated: 2025/03/13 17:31:08 by rcarpio-         ###   ########.fr       */
+/*   Updated: 2025/03/15 16:53:12 by rcarpio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,4 @@
 #include "./aux/aux.h"
 #include "./args/args.h"
 
-typedef struct s_list
-{
-	struct s_list	*prev;
-	int				value;
-	struct s_list	*next;
-}	t_list;
 #endif

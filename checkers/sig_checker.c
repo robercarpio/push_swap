@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   allocate_args.c                                    :+:      :+:    :+:   */
+/*   sig_checker.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rcarpio- <rcarpio-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/12 13:49:00 by rober             #+#    #+#             */
-/*   Updated: 2025/03/15 17:59:03 by rcarpio-         ###   ########.fr       */
+/*   Created: 2025/03/15 17:29:46 by rcarpio-          #+#    #+#             */
+/*   Updated: 2025/03/15 18:16:48 by rcarpio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "args.h"
+#include "checkers.h"
 
-void	allocate_args(char ***dest, char **src)
+int	sig_checker(char *str)
 {
-	int	i;
-	int	len;
+	int	counter;
 
-	i = 0;
-	len = array_length(*dest);
-	while (i<len)
-	{
-		(*dest)[len + i] = src[i];
-		i++;
-	}
+	counter = sig_checker(str);
+	return ((counter == 1 && (str[0] == '-' || str[0] == '+') && (str[1] >= 48
+				&& str[1] <= 57)) || (counter == 0 && (str[0] >= 48
+				&& str[0] <= 57)));
 }
+
+//return ((counter == 1 && (str[0] == '-' || str[0] == '+') && (str[1] >= 48 && str[1] <= 57)) || (counter == 0 && (str[0] >= 48 && str[0s] <= 57)));

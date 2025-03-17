@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   allocate_args.c                                    :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rcarpio- <rcarpio-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/12 13:49:00 by rober             #+#    #+#             */
-/*   Updated: 2025/03/15 17:59:03 by rcarpio-         ###   ########.fr       */
+/*   Created: 2025/03/15 15:12:22 by rcarpio-          #+#    #+#             */
+/*   Updated: 2025/03/15 15:45:31 by rcarpio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "args.h"
+#include "aux.h"
 
-void	allocate_args(char ***dest, char **src)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	int	i;
-	int	len;
-
-	i = 0;
-	len = array_length(*dest);
-	while (i<len)
+	if (!lst || !new)
+		return ;
+	if (*lst == NULL)
 	{
-		(*dest)[len + i] = src[i];
-		i++;
+		*lst = new;
+		return ;
 	}
+	ft_lstlast(*lst)->next = new;
 }
