@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rcarpio- <rcarpio-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rober <rober@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 15:10:54 by rcarpio-          #+#    #+#             */
-/*   Updated: 2025/03/15 18:20:02 by rcarpio-         ###   ########.fr       */
+/*   Updated: 2025/03/18 17:49:02 by rober            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,29 @@
 
 int	main(int argc, char *argv[])
 {
-	int	count;
+	//int	count;
 	int	i;
 	int	b;
 	
 	if (argc > 1)
 	{
 		i = 1;
-		count = 0;
 		while (argv[i])
 		{
-			index_counter(&count,argv[i]);
+			if(argv[i][0] == '\0')
+			{
+				printf("Error: Argumento vacio\n");
+				exit(-1);
+			}
 			i++;
 		}
+		// i = 0;
+		// count = 0;
+		// while (argv[i])
+		// {
+		// 	index_counter(&count,argv[i]);
+		// 	i++;
+		// }
 		i = 1;
 		b = 0;
 		while(argv[i])
@@ -38,10 +48,27 @@ int	main(int argc, char *argv[])
 			i++;
 		}
 		if (argc == (b + 1))
-			printf("true\n");
+		{
+			b = 0;
+			i = 1;
+			while (argv[i])
+			{
+				//split y aplicar el sig checkerr a cada uno de los indices del split
+				
+				i++;
+			}
+		}
+		else
+		{
+			printf("Error: Caracter no permitido\n");
+			exit(-1);
+		}
 	}
 	else
-		printf("Error: args\n");
+	{
+		printf("Error: Argumentos insuficientes\n");
+		exit(-1);
+	}
 	return(0);
 }
 //parse
