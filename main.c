@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rober <rober@student.42.fr>                +#+  +:+       +#+        */
+/*   By: rcarpio- <rcarpio-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 15:10:54 by rcarpio-          #+#    #+#             */
-/*   Updated: 2025/03/18 17:49:02 by rober            ###   ########.fr       */
+/*   Updated: 2025/03/18 18:07:41 by rcarpio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,13 +49,18 @@ int	main(int argc, char *argv[])
 		}
 		if (argc == (b + 1))
 		{
-			b = 0;
+			b = 1;
 			i = 1;
-			while (argv[i])
+			while (argv[i] && b == 1)
 			{
 				//split y aplicar el sig checkerr a cada uno de los indices del split
-				
+				b = sig_checker(argv[i]);
 				i++;
+			}
+			if (b == 0)
+			{
+				printf("Error: signos\n");
+				exit(-1);
 			}
 		}
 		else

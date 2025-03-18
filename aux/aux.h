@@ -6,7 +6,7 @@
 /*   By: rcarpio- <rcarpio-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 15:10:58 by rcarpio-          #+#    #+#             */
-/*   Updated: 2025/03/15 18:07:54 by rcarpio-         ###   ########.fr       */
+/*   Updated: 2025/03/18 17:17:50 by rcarpio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,5 +40,6 @@ void	ft_lstadd_back(t_list **lst, t_list *new);
 int		ft_atoi(char *nptr);
 int	only_chars_allowed(char *str, char *allow);
 int	must_contain(char *str, char *must);
+int	sig_count(char *str);
 
 #endif

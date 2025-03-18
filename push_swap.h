@@ -6,7 +6,7 @@
 /*   By: rcarpio- <rcarpio-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 15:10:41 by rcarpio-          #+#    #+#             */
-/*   Updated: 2025/03/15 16:53:12 by rcarpio-         ###   ########.fr       */
+/*   Updated: 2025/03/18 17:56:19 by rcarpio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,5 +17,6 @@
 
 #include "./aux/aux.h"
 #include "./args/args.h"
+#include "./checkers/checkers.h"
 
 #endif

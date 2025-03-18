@@ -14,8 +14,10 @@ SRCS =	main.c \
 		aux/ft_atoi.c \
 		aux/only_chars_allowed.c \
 		aux/must_contain.c \
+		aux/sig_count.c \
 		args/index_counter.c \
 		args/allocate_args.c \
+		checkers/sig_checker.c \
 
 NAME = push_swap
 CC = cc
