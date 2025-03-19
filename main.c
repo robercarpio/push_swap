@@ -6,7 +6,7 @@
 /*   By: rcarpio- <rcarpio-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 15:10:54 by rcarpio-          #+#    #+#             */
-/*   Updated: 2025/03/18 18:07:41 by rcarpio-         ###   ########.fr       */
+/*   Updated: 2025/03/19 17:04:11 by rcarpio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,26 +17,29 @@ int	main(int argc, char *argv[])
 	//int	count;
 	int	i;
 	int	b;
+	int	j;
 	
 	if (argc > 1)
 	{
+		b = 0;
 		i = 1;
+
 		while (argv[i])
 		{
-			if(argv[i][0] == '\0')
+			j = 0;
+			while (argv[i][j])
+			{
+				if (argv[i][j] != ' ')
+					b = 1;
+				j++;
+			}
+			if(argv[i][0] == '\0' || b == 0)
 			{
 				printf("Error: Argumento vacio\n");
 				exit(-1);
 			}
 			i++;
 		}
-		// i = 0;
-		// count = 0;
-		// while (argv[i])
-		// {
-		// 	index_counter(&count,argv[i]);
-		// 	i++;
-		// }
 		i = 1;
 		b = 0;
 		while(argv[i])
