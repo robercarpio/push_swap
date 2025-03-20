@@ -6,7 +6,7 @@
 /*   By: rcarpio- <rcarpio-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 15:10:58 by rcarpio-          #+#    #+#             */
-/*   Updated: 2025/03/18 17:17:50 by rcarpio-         ###   ########.fr       */
+/*   Updated: 2025/03/20 17:35:16 by rcarpio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,13 @@ typedef struct s_list
 	int				value;
 	struct s_list	*next;
 }	t_list;
+
+typedef struct s_stack
+{
+	t_list			*head;
+	t_list			*tail;
+	int				size;
+}	t_stack;
 
 char	**ft_split(char *s, char c);
 char	*ft_substr(char *s,int start,int len);

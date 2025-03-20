@@ -6,7 +6,7 @@
 /*   By: rcarpio- <rcarpio-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 15:10:54 by rcarpio-          #+#    #+#             */
-/*   Updated: 2025/03/19 17:04:11 by rcarpio-         ###   ########.fr       */
+/*   Updated: 2025/03/20 16:36:34 by rcarpio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 int	main(int argc, char *argv[])
 {
-	//int	count;
 	int	i;
 	int	b;
 	int	j;
@@ -56,7 +55,6 @@ int	main(int argc, char *argv[])
 			i = 1;
 			while (argv[i] && b == 1)
 			{
-				//split y aplicar el sig checkerr a cada uno de los indices del split
 				b = sig_checker(argv[i]);
 				i++;
 			}

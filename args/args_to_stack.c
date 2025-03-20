@@ -1,37 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   must_contain.c                                     :+:      :+:    :+:   */
+/*   args_to_stack.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rcarpio- <rcarpio-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/15 18:00:00 by rcarpio-          #+#    #+#             */
-/*   Updated: 2025/03/20 18:42:05 by rcarpio-         ###   ########.fr       */
+/*   Created: 2025/03/20 16:38:27 by rcarpio-          #+#    #+#             */
+/*   Updated: 2025/03/20 18:17:51 by rcarpio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "aux.h"
+#include "args.h"
 
-int	must_contain(char *str, char *must)
+t_stack	args_to_stack(char **argv)
 {
-	int	i;
-	int j;
-	int	b;
-	
-	b = 0;
-	i = 0;
-	while (str[i] && b == 0)
+	int		i;
+	char	**split;
+	int		j;
+	t_list	*prev;
+	t_list	*next;
+	t_stack	stack;
+	t_list	list;
+	i = 1;
+	while (argv[i])
 	{
 		j = 0;
-		while (must[j] && b == 0)
+		split = ft_split(argv[i],' ');
+		while (split[j])
 		{
-			if(str[i] == must[j])
-			{
-				b = 1;
-			}
+			list.value = ft_atoi(split[j]);
+			if(i == 1 && j == 0)
+				prev = NULL;
+			else
+				prev = &list;
+			list.prev = prev;
 			j++;
 		}
+		free_split(split);
 		i++;
 	}
-	return(b);
 }

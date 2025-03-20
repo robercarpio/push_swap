@@ -17,6 +17,7 @@ SRCS =	main.c \
 		aux/sig_count.c \
 		args/index_counter.c \
 		args/allocate_args.c \
+		args/args_to_stack.c \
 		checkers/sig_checker.c \
 
 NAME = push_swap
