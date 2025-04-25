@@ -3,53 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rober <rober@student.42.fr>                +#+  +:+       +#+        */
+/*   By: rcarpio- <rcarpio-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/20 21:13:21 by rcarpio-          #+#    #+#             */
-/*   Updated: 2025/04/23 21:01:21 by rober            ###   ########.fr       */
+/*   Updated: 2025/04/24 16:59:16 by rcarpio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <unistd.h>
 
-// int	main(int argc, char *argv[])
-// {
-// 	t_stack	stack_a;
-// 	t_stack	stack_b;
-// 	t_list	*tmp;
-
-// 	if (argc > 1)
-// 		argv++;
-// 	else
-// 		return (0);
-// 	if ((is_alpha(*argv) && argc == 2)
-// 		|| !max_checker(argv) || !sig_checker(argv) || void_checker(argv))
-// 		write(1, "Error\n", 6);
-// 	else
-// 	{
-// 		tmp = args_to_list(argv);
-// 		if (!sort_checker(tmp))
-// 		{
-// 			free_list(tmp);
-// 			return (0);
-// 		}
-// 		else if (parse(argv))
-// 		{
-// 			init_stacks(&stack_a, &stack_b, argv);
-// 			sort(&stack_a, &stack_b);
-// 			free_list(tmp);
-// 			free_stack(&stack_a);
-// 			free_stack(&stack_b);
-// 		}
-// 		else
-// 		{
-// 			free_list(tmp);
-// 			write(1, "Error\n", 6);
-// 		}
-// 	}
-// 	return (0);
-// }
 static int	handle_error(t_list *tmp)
 {
 	free_list(tmp);
@@ -68,16 +31,17 @@ int	main(int argc, char *argv[])
 	t_stack	stack_a;
 	t_stack	stack_b;
 	t_list	*tmp;
+	t_list	*node;
 
 	if (argc <= 1)
 		return (0);
 	argv++;
+	node = args_to_list(argv);
 	if ((is_alpha(*argv) && argc == 2)
-		|| !max_checker(argv) || !sig_checker(argv) || void_checker(argv))
-	{
-		write(1, "Error\n", 6);
-		return (0);
-	}
+		|| !max_checker(argv) || !sig_checker(argv)
+		|| void_checker(argv) || !dup_checker(node))
+		return (free_list(node), write(1, "Error\n", 6), 0);
+	free_list(node);
 	tmp = args_to_list(argv);
 	if (!sort_checker(tmp))
 		return (handle_sorted_input(tmp));
